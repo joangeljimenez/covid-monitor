@@ -35,7 +35,7 @@ cd covid-monitor
 
 
 
-5. Agregar la conexión del dataset en superset en la opción **Data>Datasets**, luego seleccionar la tabla vaccine. 
+5. Agregar la conexión del dataset en superset en la opción **Data>Datasets**, luego seleccionar la tabla **vaccine**. 
 
 
 
@@ -67,7 +67,7 @@ pyspark \
 #Para ingresar a psql 
 docker exec -it postgres psql -U covid covid 
 
-#Para crear el esquema y las tabla 
+#Para crear el esquema y la tabla 
 
 CREATE SCHEMA covid;
 
@@ -88,5 +88,3 @@ CREATE TABLE vaccine (
 \q 
 
 ```
-
-
