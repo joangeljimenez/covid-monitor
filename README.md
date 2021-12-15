@@ -88,3 +88,8 @@ CREATE TABLE vaccine (
 \q 
 
 ```
+- Los comandos de ./control-env.sh no funcionan. Es necesario otorgar permisos de ejecución desde la consola. 
+```shell
+chmod u+x ./control-env.sh 
+```
+
