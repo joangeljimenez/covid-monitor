@@ -20,7 +20,9 @@ cd covid-monitor
 ./control-env.sh token 
 ```
 
+
 2. Correr la notebook **covid_vaccine_data** 
+
 
 
 3. Luego de ejecutar la notebook iniciar superset y acceder al dashboard 
@@ -34,6 +36,7 @@ cd covid-monitor
 
 
 5. Agregar la conexión del dataset en superset en la opción **Data>Datasets**, luego seleccionar la tabla vaccine. 
+
 
 
 6. Importar el dashboard a superset 
@@ -50,7 +53,7 @@ Terminar los ambientes de docker
 
 ## Posibles errores 
 
-Los datos no se guardan desde la notebook en postgres por no encontrar el driver. En ese caso enviar al master de spark desde la consola. 
+- Los datos no se guardan desde la notebook en PostgreSQL por no encontrar el driver. En ese caso enviar al master de spark desde la consola. 
 
 ```shell
 docker exec -it master bash
