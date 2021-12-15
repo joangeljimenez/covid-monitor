@@ -30,7 +30,7 @@ cd covid-monitor
 ./control-env.sh superset-init 
 ```
 
-4. Conectar superset con la base de datos, ingresando en superset, seleccionar la opción '+ Database', seleccionar SQLite y agregar los campos necesarios: 
+4. Conectar superset con la base de datos, ingresando en [superset](http://localhost:8088/), seleccionar la opción '+ Database', seleccionar SQLite y agregar los campos necesarios: 
       - SQLAlquemy URI: postgresql://covid:c0v1d@postgres/covid  
 
 
@@ -62,6 +62,31 @@ pyspark \
   --jars code/app/postgresql-42.1.4.jar
 ```
 
+- La tabla no se crea en PostgreSQL en el momento de levantar el ambiente. Para este error, chequear y ejecutar desde la consola los siguientes comandos. 
+```shell
+#Para ingresar a psql 
+docker exec -it postgres psql -U covid covid 
 
+#Para crear el esquema y las tabla 
+
+CREATE SCHEMA covid;
+
+DROP TABLE IF EXISTS vaccine;
+CREATE TABLE vaccine (
+    id SERIAL PRIMARY KEY,
+    fecha_aplicacion DATE,
+    orden_dosis VARCHAR(2) NOT NULL,  
+    provincia VARCHAR(22) NOT NULL,
+    sexo VARCHAR(2) NOT NULL, 
+    cantidad_vacunas INT NOT NULL, 
+);
+
+#Para chequear las tablas disponibles 
+\dt 
+
+#Para volver a la terminal 
+\q 
+
+```
 
 
